@@ -1,0 +1,43 @@
+<!-- Navbar -->
+<app-nav></app-nav>
+
+<div class="main">
+	<div class="header">
+		<div>
+			<span class="title"><h1>{{ post.title }}</h1></span>
+		</div>
+		<div>
+			<span>Published by: <a>{{ post.author.username }}</a></span> | <span>Category:
+				<a>{{ post.category.name }}</a>
+			</span>| <span><a href="/post/{{ post.id }}#comments">Comments
+					({{ post.comments.length }})</a></span> | {{ post.createddate }} | <a
+				(click)="edit()" [hidden]="!sameUser">Edit</a> | <a>Add
+				a comment</a>
+		</div>
+
+	</div>
+	<div>
+		<p class="content" innerHTML="{{ post.content }}"></p>
+	</div>
+	<hr>
+	<div class="add-comment-container">
+
+		<textarea class="wp-textarea" placeholder="Add a comment..."
+			[(ngModel)]="model.comment" #comment="ngModel" required></textarea>
+
+		<button class="btn btn-lg pull-xs-right btn-primary" type="button"
+			(click)="addComment()">Add Comment</button>
+
+	</div>
+	<div id="comments">{{ post.comments.length }} comments</div>
+	<hr>
+	<div class="comments" *ngFor="let comment of post.comments">
+		<div class="comment">
+			<span><a>{{ comment.author.username }}</a></span> | {{
+			comment.createddate }}
+
+			<p>{{ comment.content }}</p>
+		</div>
+
+	</div>
+</div>

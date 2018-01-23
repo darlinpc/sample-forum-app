@@ -1,0 +1,50 @@
+
+<!-- Navbar -->
+<app-nav></app-nav>
+<div class="main">
+
+	<div class="categories">
+
+		<h2>Top 10 Categories</h2>
+
+		<ul *ngFor="let category of categories">
+			<li><a (click)="getPostByCategory(category.id)">{{category.name}}</a></li>
+		</ul>
+	</div>
+
+
+
+	<div class="posts">
+		<div class="header">
+			<h2 class="pb-3 mb-4 font-italic border-bottom postTitle">{{postTitle}}</h2>
+			<button class="btn btn-lg pull-xs-right btn-primary" type="button" routerLink="/editor">Publish
+				Article</button>
+		</div>
+
+		<div *ngFor="let post of posts">
+			<div class="post">
+
+				<div>
+					<span class="title"><a (click)="showPost(post.id)">
+							<h3>{{ post.title }}</h3>
+					</a></span>
+				</div>
+
+				<div>
+					<span>Published by: <a>{{ post.author.username }}</a></span> | <span>Category:
+						<a (click)="getPostByCategory(post.category.id)">{{
+							post.category.name }}</a>
+					</span> | <span><a href="/post/{{ post.id }}#comments">Comments
+							({{ post.comments.length }})</a></span> | {{ post.createddate }}
+				</div>
+				<br>
+
+				<div>
+					<p class="content"
+						innerHTML="{{ post.content.length > 500 ?  post.content.slice(0,500) + '... <a>Read more</a' : post.content }}"></p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

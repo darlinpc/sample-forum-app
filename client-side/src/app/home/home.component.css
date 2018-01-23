@@ -1,0 +1,59 @@
+a {
+	cursor: pointer;
+}
+
+.main {
+	overflow: auto;
+	min-width: 800px;
+	
+	padding: 3% 6%;
+}
+
+.categories {	
+	float: left;
+	width: 25%;
+	border: 1px solid #eee;
+	border-radius: 6px;
+	margin: 10px;
+	padding:20px;
+	background-color: #fff;
+}
+
+.posts {
+	float: left;
+	width: 73%;
+}
+
+.header{
+	border: 1px solid #eee;
+	border-radius: 6px;
+	margin: 10px;
+	padding:20px;
+	background-color: #fff;
+	height:100px;
+}
+
+.header h2{
+	float:left;
+}
+
+.header button{
+	float:right;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.content {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.post{
+	border: 1px solid #eee;
+	border-radius: 6px;
+	margin: 10px;
+	padding:20px;
+	background-color: #fff;
+}

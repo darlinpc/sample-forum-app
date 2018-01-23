@@ -1,0 +1,59 @@
+a {
+	cursor: pointer;
+}
+
+.main {
+	overflow: auto;
+	min-width: 800px;
+	padding: 3% 6%;
+}
+
+.content, .header {
+	text-align: justify;
+	text-justify: inter-word;
+	border: 1px solid #eee;
+	border-radius: 6px;
+	margin: 10px;
+	padding: 20px;
+	background-color: #fff;
+}
+
+.content {
+	padding: 2% 4%;
+}
+
+.comment {
+	border: 1px solid #eee;
+	border-radius: 6px;
+	margin: 10px;
+	padding: 20px;
+	background-color: #fff;
+}
+
+.comment p {
+	text-align: justify;
+	text-justify: inter-word;
+	padding: 2%;
+}
+
+#comments {
+	margin-left: 10px;
+}
+
+.add-comment-container {
+	height: 120px;
+	width: 99%;
+}
+
+.add-comment-container textarea {
+	overflow-x: hidden !important;
+	overflow-y: hidden;
+	word-wrap: break-word !important;
+	height: 80px;
+	width: 100%;
+	margin-left: 10px;
+}
+
+.add-comment-container button {
+	float: right;
+}

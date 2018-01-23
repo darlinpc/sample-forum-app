@@ -1,0 +1,42 @@
+
+<!-- Navbar -->
+<app-nav></app-nav>
+
+<div class="editor-page">
+	<div class="container page">
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-xs-12">
+				<form>
+					<fieldset [disabled]="isSubmitting">
+
+						<fieldset class="form-group">
+							<input type="text" class="form-control form-control-lg"
+								name="title" [(ngModel)]="model.title" #title="ngModel" required
+								placeholder="Article Title" />
+						</fieldset>
+
+						<fieldset class="form-group">
+							<select class="form-control" name="category"
+								[(ngModel)]="model.category" #category="ngModel" required>
+								<option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
+							</select>
+						</fieldset>
+
+						<fieldset class="form-group">
+							<textarea class="form-control" name="content"
+								[(ngModel)]="model.content" #content="ngModel" required
+								rows="20">
+							</textarea>
+
+						</fieldset>
+
+						<button class="btn btn-lg pull-xs-right btn-primary" type="button"
+							(click)="submitForm()">{{ saveButtonText}}</button>
+
+					</fieldset>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>

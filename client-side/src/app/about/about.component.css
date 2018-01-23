@@ -1,0 +1,14 @@
+.main{
+	overflow: auto;
+	
+	padding: 6% 25%;
+	background-color: #90afc5;
+	
+}
+
+.main p{
+	margin: 60px auto;
+	font-size: 20px;
+	text-align: justify;
+	text-justify: inter-word;
+}
